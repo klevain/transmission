@@ -20,6 +20,17 @@ const config = {
         use: [
           'style-loader', // create 'style' nodes from JS strings
           'css-loader', // translate css into commonjs
+          {
+            // Loader for webpack to process CSS with PostCSS
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: () => [
+                  autoprefixer
+                ]
+              }
+            }
+          },
           'sass-loader', // compile sass into css
         ],
       },
